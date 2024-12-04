@@ -13,18 +13,15 @@ def tokenize(expression):
     
     # Split and filter empty strings
     return [token for token in expr.split() if token]
-
 class ListOpsDataset(Dataset):
-    def __init__(self, X, y, max_length=2000):
+    def __init__(self, X, y):
         """
         Args:
             X: Array of source expressions
             y: Array of target values
-            max_length: Maximum sequence length (will pad/truncate to this)
         """
         self.X = X
         self.y = y
-        self.max_length = max_length
         
         # Create vocabulary from operators and digits
         self.vocab = {
@@ -53,14 +50,8 @@ class ListOpsDataset(Dataset):
         expr = self.X[idx]
         target = self.y[idx]
         
-        # Convert to token IDs
+        # Convert to token IDs without padding or truncating
         token_ids = self.tokenize(expr)
-        
-        # Pad or truncate to max_length
-        if len(token_ids) > self.max_length:
-            token_ids = token_ids[:self.max_length]
-        else:
-            token_ids = token_ids + [self.vocab['PAD']] * (self.max_length - len(token_ids))
         
         return {
             'input_ids': torch.tensor(token_ids, dtype=torch.long),
