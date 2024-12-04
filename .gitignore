@@ -1,2 +1,5 @@
 output_dir/
 *.tsv
+models/rnn_model2.ipynb
+models/rnn_model_justDiscovering.ipynb
+models/rnn_model (1).ipynb
