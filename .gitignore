@@ -3,3 +3,5 @@ output_dir/
 models/rnn_model2.ipynb
 models/rnn_model_justDiscovering.ipynb
 models/rnn_model (1).ipynb
+models/gru_model.ipynb
+models/lstm_model.ipynb
