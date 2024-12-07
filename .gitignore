@@ -5,5 +5,5 @@ models/rnn_model_justDiscovering.ipynb
 models/rnn_model (1).ipynb
 models/gru_model.ipynb
 models/lstm_model.ipynb
-
+models/lstm_with_attention_model_test.ipynb
 ilyas_models/checkpoint-4690/
