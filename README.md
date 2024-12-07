@@ -1,7 +1,4 @@
 ## Overview
-# Project README
-
-## Overview
 
 This project involves building and training various neural network models for sequence classification tasks using PyTorch. The models include LSTM, LSTM with Attention, RNN, and AllenAI Longformer architectures, as well as a DistilBERT model for natural language processing tasks. The dataset used consists of expressions that are tokenized and converted into a format suitable for training.
 
@@ -23,23 +20,21 @@ The dataset used in this project includes expressions formatted in a tree-like s
 └── 6
 ```
 ## Table of Contents
-
-- [Project README](#project-readme)
-  - [Overview](#overview-1)
-    - [Task Description](#task-description)
-  - [Example Data](#example-data)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [Data Preparation](#data-preparation)
-    - [Tokenization Function](#tokenization-function)
-  - [Model Architectures](#model-architectures)
-    - [RNN Model](#rnn-model)
-    - [LSTM Model](#lstm-model)
-    - [LSTM with Attention Model](#lstm-with-attention-model)
-    - [AllenAI Longformer Model](#allenai-longformer-model)
-    - [DistilBERT Model](#distilbert-model)
-    - [Transformer Classifier Model](#transformer-classifier-model)
-  - [Training and Evaluation](#training-and-evaluation)
+- [Overview](#overview)
+  - [Task Description](#task-description)
+- [Example Data](#example-data)
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+- [Data Preparation](#data-preparation)
+  - [Tokenization Function](#tokenization-function)
+- [Model Architectures](#model-architectures)
+  - [RNN Model](#rnn-model)
+  - [LSTM Model](#lstm-model)
+  - [LSTM with Attention Model](#lstm-with-attention-model)
+  - [AllenAI Longformer Model](#allenai-longformer-model)
+  - [DistilBERT Model](#distilbert-model)
+  - [Transformer Classifier Model](#transformer-classifier-model)
+- [Training and Evaluation](#training-and-evaluation)
 
 ## Installation
 
