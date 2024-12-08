@@ -8,17 +8,11 @@ Given the dataset, our goal is to determine the exact mathematical solution for 
 
 ## Example Data
 
-The dataset used in this project includes expressions formatted in a tree-like structure. Below is an example of how the data appears :
+The dataset used in this project includes expressions formatted like the one below:
 ```
-[MAX
-├── 6
-├── [MED
-│   ├── [MIN
-│   │   ├── 2
-│   │   └── 9
-│   └── 3
-└── 6
+[MAX 2 9 [MIN 4 7 ] 0 ]
 ```
+**Note:** The actual expressions in the real dataset are much longer than this one.
 ## Table of Contents
 - [Overview](#overview)
   - [Task Description](#task-description)
@@ -77,7 +71,7 @@ The LSTM with Attention model is implemented in `models/lstm_with_attention_mode
 The AllenAI Longformer model is implemented in `models/allenai Longformer.ipynb`. This model is designed for long document processing and utilizes attention mechanisms to handle longer sequences efficiently. The model achieved an accuracy of **17.25%** on the test dataset.
 ### DistilBERT Model
 
-The DistilBERT model is implemented in `ilyas_models/distilbert_train_5000.ipynb`. It leverages the transformer architecture for sequence classification tasks, providing state-of-the-art performance on various NLP tasks. The model achieved an accuracy of **38.35%** on the test dataset.
+The DistilBERT model is implemented in three versions: `ilyas_models/distilbert_train_5000.ipynb`, `ilyas_models/distilbert_train_30000.ipynb`, and `ilyas_models/distilbert_train_full.ipynb`. Each one was fine-tuned on 5000, 30000, and on the full train dataset, respectively. It leverages the transformer architecture for sequence classification tasks, providing state-of-the-art performance on various NLP tasks. The model that was fine-tuned on the full dataset achieved an accuracy of **43.75%** on the test dataset.
 ### Transformer Classifier Model
 
 The Transformer Classifier model is implemented in `models/TransformerClassifier.ipynb`. This model leverages transformer architecture for sequence classification tasks. It is designed to handle tokenized expressions and classify them based on the learned representations. The model achieved an accuracy of **38.65%** on the test dataset.
