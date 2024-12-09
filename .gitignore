@@ -7,3 +7,5 @@ models/gru_model.ipynb
 models/lstm_model.ipynb
 models/lstm_with_attention_model_test.ipynb
 ilyas_models/checkpoint-4690/
+models/lstm-with-attention__.ipynb
+models/elstm_model.ipynb

@@ -6,7 +6,7 @@ This repository explores hierarchical sequence processing using a variety of neu
 
 We experiment with a diverse set of models, including:
 
-- **RNN-Based Models:** Simple RNNs, LSTMs, and LSTMs with Attention  
+- **RNN-Based Models:** Bidirectional RNNs, Bidirectional LSTMs, and Bidirectional LSTMs with Attention  
 - **Transformer-Based Models:**  
   - AllenAI Longformer for long-range dependency handling  
   - DistilBERT for leveraging pre-trained language representations  
@@ -108,22 +108,22 @@ test_loader = DataLoader(test_dataset, batch_size=32, collate_fn=collate_fn)
 
 ## Model Architectures
 
-### 1. RNN Model
+### 1. Bidirectional RNN Model
 
-- **File:** `models/rnn_model.ipynb`  
-- **Description:** A simple RNN-based classifier. While straightforward, it struggles with very long sequences due to vanishing gradients and limited context.  
+- **File:** `models/bidirectional_rnn_model.ipynb`  
+- **Description:** A Bidirectional RNN-based classifier. While straightforward, it struggles with very long sequences due to vanishing gradients and limited context.  
 - **Performance:** ~45.20% test accuracy
 
-### 2. LSTM Model
+### 2. Bidirectional LSTM Model
 
-- **File:** `models/lstm_model.ipynb`  
-- **Description:** Leverages LSTM units to better capture long-term dependencies.  
+- **File:** `models/bidirectional_lstm_model.ipynb`  
+- **Description:** Leverages Bidirectional LSTM units to better capture long-term dependencies.  
 - **Performance:** ~59.50% test accuracy
 
 ### 3. LSTM with Attention Model
 
-- **File:** `models/lstm_with_attention_model.ipynb`  
-- **Description:** Adds an attention mechanism to the LSTM, allowing the model to focus on the most relevant parts of the sequence.  
+- **File:** `models/bidirectional_lstm_with_attention_model.ipynb`  
+- **Description:** Adds an attention mechanism to the bidirectional LSTM, allowing the model to focus on the most relevant parts of the sequence.  
 - **Performance:** ~62.25% test accuracy
 
 ### 4. AllenAI Longformer Model
@@ -220,9 +220,9 @@ print(f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.2f}%")
 
 | Model                  | Test Accuracy | Notes                                |
 |------------------------|---------------|---------------------------------------|
-| RNN                    | 45.20%        | Baseline, struggles with long deps    |
-| LSTM                   | 59.50%        | Better long-term dependencies         |
-| LSTM + Attention       | 62.25%        | Focuses on important parts of input   |
+| Bidirectional RNN                    | 45.20%        | Baseline, struggles with long deps    |
+| Bidirectional LSTM                   | 59.50%        | Better long-term dependencies         |
+| Bidirectional LSTM + Attention       | 62.25%        | Focuses on important parts of input   |
 | AllenAI Longformer     | 17.25%        | Requires more tuning for this dataset |
 | DistilBERT (Full Data) | 43.75%        | Leverages pre-trained language model  |
 | Transformer Classifier | 38.65%        | Good, but expensive for very long seq |
@@ -241,7 +241,7 @@ print(f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.2f}%")
   Transformers have shown state-of-the-art results in NLP. BigBird extends these capabilities to handle extremely long sequences efficiently by using sparse attention patterns.
 
 - **Trade-offs:**  
-  - **RNNs/LSTMs:** Simpler but struggle with very long inputs.  
+  - **Bidirectional RNNs/LSTMs:** Simpler but struggle with very long inputs.  
   - **Transformers:** Powerful but can be expensive (O(n²) complexity in sequence length).  
   - **Sparse-Attention Models (Longformer, BigBird):** More efficient for long sequences, but may require careful tuning and can be more complex to implement.
 
